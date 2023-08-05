@@ -1,0 +1,239 @@
+# 15- get the volume of the sphere.
+# V = 4/3 * 3.14 * r ** 3
+
+r = float(input("enter the radius of the sphere: "))
+volume = 4.0 / 3.0 * 3.14 * r ** 3
+print(f"the volume of the sphere is {format(volume, '.2f')} ")
+
+# =============================================================== #
+# 16
+# program to calculate the difference between a given number and 17. If the number is greater than 17,
+# return twice the absolute difference
+
+
+def difference():
+    num = int(input("enter your number here: "))
+    if num <= 17:
+        diff = 17 - num
+    else:
+        diff = abs(17 - num) * 2
+    return diff
+
+
+print(difference())
+
+# ==================================================================== #
+# 17
+#  Write a Python program to test whether a number is within 100 of 1000 or 2000.
+def check_near_thousands():
+    num = int(input("enter a num to check if it is near 1000 or 2000: "))
+    return (abs(1000 - num) <= 100) or (abs(2000 - num) <= 100)
+
+
+print(check_near_thousands())
+
+# ===================================================================== #
+
+# 18
+# program to calculate the sum of three given numbers. If the values are equal, return three times their sum.
+def sum_of_three():
+    numbers = []
+    total = 0
+    for i in range(3):
+        n = int(input(f"enter number {i + 1}: "))
+        numbers.append(n)
+
+    # check if the three values are equal
+    if numbers[0] == numbers[1] and numbers[0] == numbers[2]:
+        total = numbers[0] * 3
+    else:
+        total = sum(numbers) * 3
+    return total
+
+
+print(sum_of_three())
+
+# =========================================================================#
+# 19
+# a Python program to get a newly-generated string from a given string where "Is" has been added to the front.
+# Return the string unchanged if the given string already begins with "Is".
+
+def modify_text():
+    text = input("enter your text here: ")
+    if len(text) >= 2 and text[:2] == "Is":
+        print(f"original text {text}")
+    else:
+        new_text = 'Is ' + text  # if no "Is" in the beginning.
+        print(f"new text is : {new_text}")
+
+
+modify_text()
+
+# =============================================================== #
+# 20
+# a Python program that returns a string that is n (non-negative integer) copies of a given string.
+
+def multiply_text():
+    text = input("enter your text you wanna repeat: ")
+    num = int(input("number of repeats: "))
+    return text * num
+
+
+print(multiply_text())
+
+# ================================================================= #
+# 21
+# determine even or odd
+
+def even_odd():
+    num = int(input("enter your number: "))
+    if num % 2 == 0:
+        print("your number is even")
+    else:
+        print("your number is odd")
+
+
+even_odd()
+
+# =============================================================== #
+# 22
+# a Python program to count the number 4 in a given list.
+
+def count_four(new_list):
+    count = 0
+    for num in new_list:
+        if num == 4:
+            count += 1
+    print(f"the number of fours in the list is {count}")
+
+
+count_four([4, 2, 3, 5, 4, 10, 4])
+
+# ================================================================ #
+# 23
+#  Python program to get n copies of the first 2 characters of a given string. Return n copies of
+#  the whole string if the length is less than 2.
+
+def repeat_string():
+    text = input("enter your text here: ")
+    num = int(input("enter number of repeats for the first two chars: "))
+    if len(text) <= 2:
+        return text * num
+    return text[:2] * num
+
+
+print(repeat_string())
+
+# ====================================================================== #
+# 24
+# check for vowels
+
+def check_vowel():
+    vowels = ['a', 'i', 'e', 'u', 'o']
+    character = input("enter the character: ").lower()
+    return character in vowels  # return true or false
+
+
+print(check_vowel())
+
+# ==================================================================== #
+# 25
+# checks whether a specified value is contained within a group of values.
+
+def check(num, group):
+    return num in group
+
+
+print(check(3, [1, 2, 3, 4, 5]))
+print(check(10, [1, 2, 3, 4, 5]))
+
+# ======================================================================== #
+# 26
+# draw a hist
+
+def draw_a_hist(character, a_list):
+    i = 0
+    while i < len(a_list):
+        text = ""
+        for x in range(a_list[i]):
+            text += character
+        print(text)
+        i += 1
+
+
+draw_a_hist("@", [2, 3, 6, 5])
+
+# ==================================================================== #
+# 27
+# concatenate a list and return a string from it .
+def convert_to_string(my_list):
+    text = ''
+    for item in my_list:
+        text += str(item)
+    return text
+
+
+print(convert_to_string(['he', 'llo', ' the', 're', 22]))
+
+# =========================================================================== #
+# 28
+# check even number but stop at a specific number.
+numbers = [
+    386, 462, 47, 418, 907, 344, 236, 375, 823, 566, 597, 978, 328, 615, 953, 345,
+    399, 162, 758, 219, 918, 237, 412, 566, 826, 248, 866, 950, 626, 949, 687, 217,
+    815, 67, 104, 58, 512, 24, 892, 894, 767, 553, 81, 379, 843, 831, 445, 742, 717,
+    958, 743, 527
+]
+
+for num in numbers:
+    if num == 237:
+        print(num)
+        break
+    else:
+        if num % 2 == 0:
+            print(f"the number {num} is even")
+
+# ======================================================================= #
+# 29
+# check the missing colors from list1 inside list2
+
+color_list1 = ['red', 'green', 'black', 'white']
+color_list2 = ['red', 'green', 'orange']
+missing_colors = []
+
+for color in color_list1:
+    if color not in color_list2:
+        missing_colors.append(color)
+
+print(missing_colors)
+
+# or you can use the difference method for a set not a list ??
+# print(color_list1.difference(color_list2))
+
+# ===================================================================== #
+# 30
+# area of a rectangle
+
+def calc_area(base, height):
+    area = .5 * float(base) * float(height)
+    return format(area, '.2f')
+
+
+print(calc_area(15, 20))
+
+# ====================================================================== #
+# 33
+# sum three integers but if two of them equal, the sum will be zero
+
+def sum_thrice(nums):
+    total = 0
+    if nums[0] == nums[1] or nums[1] == nums[2] or nums[0] == nums[2]:
+        return total
+    return sum(nums)
+
+
+print(sum_thrice([1, 2, 3]))
+print(sum_thrice([1, 1, 2]))
+print(sum_thrice([1, 2, 2]))
+
+# =================================================================== #
