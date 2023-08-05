@@ -1,0 +1,8 @@
+# 14
+# calculate difference between two dates using datetime module
+
+from datetime import date
+f_date = date(2014, 7, 2)
+s_date = date(2018, 8, 3)
+dif = s_date - f_date
+print(dif.days)
